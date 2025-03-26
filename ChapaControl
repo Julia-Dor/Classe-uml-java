@@ -1,0 +1,78 @@
+package chapacontrol;
+
+public class ChapaControl {
+
+    // método para verificar se um usuário pode acessar o sistema.
+    public boolean verifyUser(String email, String password) {
+        System.out.println("Verificando usuário com email:" + email);
+        return email != null && password != null && !email.isEmpty() && !password.isEmpty();
+    }
+
+    //método para determinar permissões de um usuário
+    public String determinePermissions(User user) {
+        if (user instanceof Employee) {
+            return "Gerente - Acesso Total";
+        } else if (user instanceof Employee) {
+            return "Colaborador - Acesso ao Estoque";
+        } else if (user instanceof Visitor) {
+            return "Visitante - Apenas Visualização";
+        } else {
+            return "Usuário desconhecido - Sem Acesso";
+        }
+    }
+
+    // método para atualizar o estoque com um novo item ou uma nova quantidade
+    public boolean updateStock(StockItem item, int quantity) {
+        if (item != null && quantity > 0) {
+            System.out.println("Atualizar estoque:" + item.getName() + " - Quantidade:" + quantity);
+            item.setQuantity(item.getQuantity() + quantity);
+            return true;
+        }
+        return false;
+    }
+
+    // método para salvar informações no banco de dados (simulado)
+    public boolean saveToDatabase(String data) {
+        if (data == null || data.isEmpty()) {
+            return false;
+        }
+        System.out.println("Salvando no banco de dados:" + data);
+        return true;
+    }
+
+    // método para verificar se um item está disponível no estoque
+    public boolean checkAvailability(StockItem item) {
+        if (item != null) {
+            return item.getQuantity() > 0;
+        }
+        return false;
+    }
+
+    // método para verificar se um item precisa de reposição no estoque
+    public boolean checkRetockNeed(StockItem item) {
+        if (item != null) {
+            return item.getQuantity() < 10;
+        }
+        return false;
+    }
+
+    // método para enviar um relatório do estoque
+    public String sendReport() {
+        String report = "Relatório do estoque gerado com sucesso.";
+        System.out.println(report);
+        return report;
+    }
+
+   // método para receber um relatório
+    public String receiveReport() {
+        String report = "Relatório recebido com sucesso.";
+        System.out.println(report);
+        return report;
+    }
+
+    @Override
+    public String toString() {
+        return "ChapaControl - Sistema de Gerenciamento de Estoque e Usuários";
+    }
+
+}
