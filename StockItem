@@ -1,0 +1,135 @@
+package chapacontrol;
+
+public class StockItem {
+    private int id; // Identificador único do item
+    private String name; // Nome do item
+    private int quantity; // Quantidade disponível no estoque
+    private String batch; // Número do lote
+    private int amount; // Quantidade total de unidades no lote
+    private String quality; // Qualidade do material
+    private String type; // Tipo de chapa (ex: aço inox, galvanizado, etc.)
+    private double diameter; // Diâmetro da chapa (se aplicável)
+    private double thickness; // Espessura da chapa
+    private String state; // Estado da chapa (ex: nova, reciclada, danificada)
+    private String origin; // Origem do material
+    private double weight; // Peso da chapa
+
+    // Construtor da classe StockItem
+    public StockItem(int id, String name, int quantity, String batch, int amount, String quality,
+                     String type, double diameter, double thickness, String state, String origin, double weight) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.batch = batch;
+        this.amount = amount;
+        this.quality = quality;
+        this.type = type;
+        this.diameter = diameter;
+        this.thickness = thickness;
+        this.state = state;
+        this.origin = origin;
+        this.weight = weight;
+    }
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getBatch() {
+        return batch;
+    }
+    public void setBatch(String batch) {
+        this.batch = batch;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getQuality() {
+        return quality;
+    }
+    public void setQuality(String quality) {
+        this.quality = quality;
+    }
+
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public double getDiameter() {
+        return diameter;
+    }
+    public void setDiameter(double diameter) {
+        this.diameter = diameter;
+    }
+
+    public double getThickness() {
+        return thickness;
+    }
+    public void setThickness(double thickness) {
+        this.thickness = thickness;
+    }
+
+    public String getState() {
+        return state;
+    }
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "StockItem{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", batch='" + batch + '\'' +
+                ", amount=" + amount +
+                ", quality='" + quality + '\'' +
+                ", type='" + type + '\'' +
+                ", diameter=" + diameter +
+                ", thickness=" + thickness +
+                ", state='" + state + '\'' +
+                ", origin='" + origin + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
+}
