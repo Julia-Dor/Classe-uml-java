@@ -1,0 +1,99 @@
+package chapacontrol;
+
+import java.util.ArrayList;
+import java.util.List;
+public class StockControl {
+    private int register;
+    private String status;
+    private String notification;
+    private List<StockItem> items;
+
+    public StockControl(int register, String status, String notification) {
+        this.register = register;
+        this.status = status;
+        this.notification = notification;
+        this.items = new ArrayList<>();
+    }
+
+    public int getRegister() {
+        return register;
+    }
+
+    public void setRegister(int register) {
+        this.register = register;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getNotification() {
+        return notification;
+    }
+
+    public void setNotification(String notification) {
+        this.notification = notification;
+    }
+
+    public List<StockItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<StockItem> items) {
+        this.items = items;
+    }
+
+    // método para adicionar um item ao estoque
+    public boolean addItem(StockItem item, int quantity) {
+        if (item != null && quantity > 0) {
+            item.setQuantity(item.getQuantity() + quantity);
+            items.add(item);
+            System.out.println("Item adicionado ao estoque: " + item.getName() + " - Quantidade:" + quantity);
+            return true;
+        }
+        return false;
+    }
+
+    // método para remover um item do estoque
+    public boolean removeItem(StockItem item, int quantity) {
+        if (item.getQuantity() >= quantity) {
+            item.setQuantity(item.getQuantity() - quantity);
+            System.out.println("Item removido do estoque: " + item.getName() + " - Quantidade:" + quantity);
+            return true;
+        } else {
+            System.out.println("Erro:Quantidade Insuficiente em estoque para remover.");
+        }
+        return false;
+    }
+
+    // método para verificar se um item estpa disponível no estoque
+    public boolean checkAvailability(StockItem item) {
+        return item != null && item.getQuantity() > 0;
+    }
+
+    // método para gerar um relatório do estoque
+    public String generateStockReport () {
+        StringBuilder report = new StringBuilder("Relatório do Estoque:\n");
+        for (StockItem item : items) {
+            report.append(item.toString()).append("\n");
+        }
+        System.out.println(report.toString());
+        return report.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "StockControl{" +
+                "register=" + register +
+                ", status='" + status + '\'' +
+                ", notification='" + notification + '\'' +
+                ", total items=" + items.size() +
+                '}';
+    }
+
+
+}
