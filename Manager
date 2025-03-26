@@ -1,0 +1,42 @@
+package chapacontrol;
+import java.util.Date;
+public class Manager extends User{
+private String position;
+
+public Manager(String name, Date birthdate, String cpf, String email, String passoword, String phone, String position) {
+    super(name, birthdate, cpf, email, passoword, phone);
+    this.position = position;
+    }
+
+    public String getPosition() { return position; }
+    public void setPosition(String position) { this.position = position; }
+
+    // Métodos relacionados ao gerenciamento de estoque e permissões
+    public void manageInventory() {
+        System.out.println(name + " está gerenciando o inventário.");
+    }
+
+    public void approveRestock() {
+        System.out.println(name + " está aprovando reposição de estoque.");
+    }
+
+    public void authorizeSales() {
+        System.out.println(name + " está autorizando vendas.");
+    }
+
+    public void approveEmployeeReports() {
+        System.out.println(name + " está aprovando relatórios de funcionários.");
+    }
+
+    public void manageAccess() {
+        System.out.println(name + " está gerenciando acessos ao sistema.");
+    }
+
+    // Implementação do método toString para exibir informações do gerente
+    @Override
+    public String toString() {
+        return super.toString().replace("User", "Manager") +
+                ", position='" + position + '\'' + '}';
+    }
+}
+
