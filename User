@@ -1,0 +1,79 @@
+package chapacontrol;
+import java.util.Date;
+public abstract class User {
+    protected String name;
+    protected Date birthdate;
+    protected String cpf;
+    protected String email;
+    protected String password;
+    protected String phone;
+
+    public User(String name, Date birthdate, String cpf, String email, String password, String phone) {
+        this.name = name;
+        this.birthdate = birthdate;
+        this.cpf = cpf;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", birthdate=" + birthdate +
+                ", cpf='" + cpf + '\'' +
+                ", email='" + email + '\'' +
+                ", phone=" + phone +
+                '}';
+
+    }
+}
