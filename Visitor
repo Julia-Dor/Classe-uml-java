@@ -1,0 +1,43 @@
+package chapacontrol;
+
+public class Visitor extends User{
+
+    public Visitor(String name, String email, String password) {
+        super(name, null, null, email, password, null); //não foi fornecido birthdate, cpf ou phone
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getEmail() {
+        return email;
+    }
+    @Override
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Visitor{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+}
