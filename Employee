@@ -1,0 +1,52 @@
+package chapacontrol;
+import java.util.Date;
+public class Employee extends User{
+    private String position; //Cargo de funcionário
+
+    public Employee(String name, Date birthdate, String cpf, String email, String password, String phone, String position) {
+        super(name, birthdate, cpf, email, password,phone);
+        this.position = position;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    // metodos relacionados ao gerenciamento de estoque
+    public void checkInventory() {
+        System.out.println(name + "está verificando o inventário.");
+    }
+
+    public void updateStock() {
+        System.out.println(name + "está atualizando o estoque.");
+    }
+
+    public void receiveReport() {
+        System.out.println(name + "recebeu um relatório.");
+    }
+
+    public void storeMaterial() {
+        System.out.println(name + "está armazenando materiais.");
+    }
+
+    public void scanQRCode() {
+        System.out.println(name + "está escaneando QR Code.");
+    }
+
+    public void registerQuantity() {
+        System.out.println(name + "está registrando a quantidade no sistema.");
+    }
+
+    public void sendReport() {
+        System.out.println(name + "enviou um relatório.");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString().replace("User", "Employee") +
+                ",position='" + position + '\'' + '}';
+    }
+}
